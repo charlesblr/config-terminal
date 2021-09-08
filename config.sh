@@ -29,10 +29,13 @@ brew install awscli
 curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
 
 # add plugins
-echo "plugins=(git, kube-ps1)" >> $HOME/.zshrc
+echo "plugins=(kube-ps1)" >> $HOME/.zshrc
 
 # add aliases
 echo "alias k='kubectl'" >> $HOME/.zshrc
 echo "alias kns='kubens'" >> $HOME/.zshrc
 echo "alias kx='kubectx'" >> $HOME/.zshrc
+
+# use plugins 
+PROMPT='$(kube_ps1)'$PROMPT
 
