@@ -1,11 +1,5 @@
 #!/bin/bash
 
-# install HomeBrew 
-curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh
-
-# install git
-brew install git 
-
 # install K8S-related tools
 brew install kubectl
 brew install kube-ps1 # to show kubernetes contexts and namespaces in CLI
@@ -22,20 +16,18 @@ export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 kubectl krew install ctx
 kubectl krew install ns
 
-# install aws-cli
+# install aws-related tools
 brew install awscli
+brew install aws-iam-authenticator
 
 # install OhMyZsh
 curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
 
-# add plugins
+# add and configure plugin
 echo "plugins=(kube-ps1)" >> $HOME/.zshrc
+echo "PROMPT='$(kube_ps1)'$PROMPT" >> $HOME/.zshrc
 
 # add aliases
 echo "alias k='kubectl'" >> $HOME/.zshrc
 echo "alias kns='kubens'" >> $HOME/.zshrc
 echo "alias kx='kubectx'" >> $HOME/.zshrc
-
-# use plugins 
-PROMPT='$(kube_ps1)'$PROMPT
-
