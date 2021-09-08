@@ -16,6 +16,9 @@ export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 kubectl krew install ctx
 kubectl krew install ns
 
+# install helmswitcher
+brew install tokiwong/tap/helm-switcher
+
 # install aws-related tools
 brew install awscli
 brew install aws-iam-authenticator
