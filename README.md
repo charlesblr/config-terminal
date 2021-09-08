@@ -1,6 +1,6 @@
 # Configure my Terminal
 
-## install HomeBrew 
+## install homebrew 
 - ```curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh```
 
 ## install git
